@@ -20,10 +20,25 @@ app.get("/", function(req, res) {
 });
 
 app.get("/notes", function(req, res) {
-    // res.send("note home page")
+    // res.send("notetaking page")
     res.sendFile(path.join(__dirname, "/public/notes.html"));
 });
 
+app.get("/api/notes", function(req, res) {
+    // res.send("json file")
+    res.sendFile(path.join(__dirname, "/db/db.json"));
+});
+
+app.post("/api/notes", function(req, res) {
+    // res.send("json file")
+    res.sendFile(path.join(__dirname, "/db/db.json"));
+});
+
+
+app.delete("/api/notes/:id", function(req, res) {
+    // res.send("json file")
+    res.sendFile(path.join(__dirname, "/db/db.json"));
+});
 
 
 app.listen(PORT, function() {
